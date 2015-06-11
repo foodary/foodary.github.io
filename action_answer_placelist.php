@@ -41,7 +41,8 @@
             $spacename = str_replace(" ", "+", $result['name']);
             $spaceaddress = str_replace(" ", "+", $result['vicinity']);
             $loc = "http://www.google.com/maps/dir/".$_GET['action']."/".$spacename.",+".$spaceaddress;
-			echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity']."ccc".$loc.";";
+            
+	    echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity']."<br>".$result['rating']."/5<br>Price: ".$price."/3ccc".$loc.";";
     	}
 	}
 ?>
