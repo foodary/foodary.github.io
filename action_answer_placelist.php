@@ -41,8 +41,15 @@
             $spacename = str_replace(" ", "+", $result['name']);
             $spaceaddress = str_replace(" ", "+", $result['vicinity']);
             $loc = "http://www.google.com/maps/dir/".$_GET['action']."/".$spacename.",+".$spaceaddress;
-            
-	    echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity']."<br>".$result['rating']."/5<br>Price: ".$price."/3ccc".$loc.";";
+            if($result['opening_hours']['open_now'])
+            {
+            	$open = "Open at this time";
+            }
+            else
+            {
+            	$open = "Not open currently"
+            }
+	    echo "<img src=\"".$result['icon']."\" height=\"200\"><br>".$result['name']."`".$result['vicinity']."<br>".$result['rating']."/5<br>Price: ".$price."/3<br>".$open."ccc".$loc.";";
     	}
 	}
 ?>
