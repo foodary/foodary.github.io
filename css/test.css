@@ -6,3 +6,16 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 @import url(http://fonts.googleapis.com/css?family=Sigmar+One);
 @import url(metro-bootstrap.min.css);
+
+.card
+{
+	border: 1px solid #000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 0;
+}
+
+img
+{
+	width: 50%;
+}
