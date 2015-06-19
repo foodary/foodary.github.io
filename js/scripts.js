@@ -1,7 +1,6 @@
 navigator.geolocation.getCurrentPosition(function (result) {
     var lat = result.coords.latitude;
     var lon = result.coords.longitude;
-    alert(lat+","+lon);
     var location = new google.maps.LatLng(lat, lon);
     var request = {
         location: location,
