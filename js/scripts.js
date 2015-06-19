@@ -13,6 +13,8 @@ navigator.geolocation.getCurrentPosition(function (result) {
     });
     var service = new google.maps.places.PlacesService(map);
     service.nearbySearch(request, callback);
+}, function(){
+    alert("Sorry, something went wrong. Please check your device's location settings");
 });
 function callback(results, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
@@ -42,6 +44,7 @@ function callback(results, status) {
             {
                 var phone = "No Phone Number Available";
             }
+            document.getElementById("main").innerHTML = "";
             $(".jumbotron").append("<div class=\"card "+i+"\"><img src=\""+result.icon+"\"><h1>"+result.name+"</h1><div class=\""+i+"details\"><h3>"+result.vicinity+"<br>"+price+"<br>"+rating+"<br>"+phone+"</h3></div><br><a href=\"https://www.google.com/maps/dir/Current+Location/"+result.vicinity+"\" target=\"blank\"><button class=\"btn-default btn\" style=\"border-radius:50%;color:#0F0;\"><i class=\"fa fa-heart\" style=\"font-size:33px\"></i></button></a> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#00F\" onclick=\"details("+i+")\"><i class=\"fa fa-ellipsis-h\" style=\"font-size:36px\"></i></button> <button class=\"btn-default btn\" style=\"border-radius:50%;color:#F00\" onclick=\"no("+i+")\"><i class=\"fa fa-times\" style=\"font-size:36px\"></i></button></div>");
             $("."+i).hide();
             $("."+i+"details").hide();
