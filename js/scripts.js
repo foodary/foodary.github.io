@@ -40,6 +40,7 @@ navigator.geolocation.getCurrentPosition(function (result) {
                 $("." + i + "details").hide();
                 $(".0").show();
             }
+            $(".jumbotron").append("<div class=\"card " + results.length + "\">End of results.</div>");
         }
     });
 }, function () {
